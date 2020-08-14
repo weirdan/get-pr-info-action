@@ -1,6 +1,17 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'get-pr-info-action'
+description: 'Retrieves the PR info given the PR number'
+author: 'Bruce Weirdan'
+inputs:
+  pull_number:
+    required: true
+    description: PR number to fetch
+  token:
+    required: true
+    description: Github token
+
+outputs:
+    pull_request:
+        description: PR data
 runs:
   using: 'node12'
   main: 'dist/index.js'
