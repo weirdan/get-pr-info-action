@@ -20,5 +20,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: ./
+        id: pr_fetch
         with:
-          milliseconds: 1000
+          token: ${{ secrets.GITHUB_TOKEN }}
+          pull_number: 6
+      - env:
+          PR: ${{ toJson(steps.pr_fetch.outputs.pull_request) }}
+        run: echo "$PR"
