@@ -25,5 +25,5 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           pull_number: 6
       - env:
-          PR: ${{ steps.pr_fetch.outputs.pull_request }}
+          PR: ${{ toJson(fromJson(steps.pr_fetch.outputs.pull_request)) }}
         run: echo "$PR"
