@@ -12,7 +12,9 @@ async function run(): Promise<void> {
     })
     core.setOutput('pull_request', result.data)
   } catch (error) {
-    core.setFailed(error.message)
+    if (error instanceof Error) {
+      core.setFailed(error.message)
+    }
   }
 }
 
