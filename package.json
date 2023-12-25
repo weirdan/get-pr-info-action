@@ -1,4 +1,5 @@
 {
+  "name": "get-pr-info-action",
   "private": true,
   "main": "lib/main.js",
   "scripts": {
