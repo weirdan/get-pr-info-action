@@ -13,5 +13,5 @@ outputs:
     pull_request:
         description: PR data
 runs:
-  using: 'node12'
+  using: 'node20'
   main: 'dist/index.js'
